@@ -1,0 +1,12 @@
+delta Random {	
+
+	modifies jab.module.Movement {
+		adds import java.util.Random;
+		modifies move() {
+			Random rand = new Random();	
+			bot.setAhead(rand.nextInt(1000));
+		}
+		
+	}
+
+}
