@@ -1,0 +1,21 @@
+delta FurthestEnemySelect {
+	modifies jab.module.SelectEnemy{
+		
+		adds import java.util.Iterator;
+		adds import jab.module.BotInfo;
+		
+		modifies select(){
+			Iterator<BotInfo> iterator = bot.botsInfo.values().iterator();
+	        double maxDistance = 0;
+	        BotInfo selected = null;
+	        while (iterator.hasNext()) {
+	            BotInfo botInfo = iterator.next();
+	            if ((!botInfo.teammate) && maxDistance < botInfo.distance) {
+	                selected = botInfo;
+	                maxDistance = botInfo.distance;
+	            }
+	        }
+	        bot.enemy = selected;
+		}
+	}
+}

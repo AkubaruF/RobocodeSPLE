@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <feature:DEFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:feature="http://deltaecore.org/feature/1.0">
   <rootFeature minCardinality="1" maxCardinality="1" name="Module">
-    <groups minCardinality="3" maxCardinality="3">
+    <groups minCardinality="4" maxCardinality="4">
       <features minCardinality="1" maxCardinality="1" name="Radar">
         <groups minCardinality="1" maxCardinality="1">
           <features maxCardinality="1" name="SpinningRadar"/>
@@ -16,6 +16,11 @@
       <features minCardinality="1" maxCardinality="1" name="Gun">
         <groups maxCardinality="1">
           <features maxCardinality="1" name="MouseRandom"/>
+        </groups>
+      </features>
+      <features minCardinality="1" maxCardinality="1" name="SelectEnemy">
+        <groups maxCardinality="1">
+          <features maxCardinality="1" name="Furthest"/>
         </groups>
       </features>
     </groups>

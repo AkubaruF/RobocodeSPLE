@@ -6,3 +6,6 @@ SpinningRadar:
 
 MouseRandom:
 <decore/MouseClickRandom.decore>
+
+Furthest:
+<decore/FurthestEnemySelect.decore>
