@@ -1,0 +1,25 @@
+delta MouseClickRandom {
+	
+	modifies jab.module.Gun{
+		adds import robocode.Bullet;
+        adds import java.awt.event.InputEvent;
+        adds import java.awt.event.MouseEvent;
+        adds import java.util.Random;
+        
+        adds public void listenInput(InputEvent e) {
+	            if (e instanceof MouseEvent) {
+	                if (e.getID() == MouseEvent.MOUSE_PRESSED)
+	                    bot.bulletPower = (Math.random() < 0.5) ? 1 : 3;
+	                else if (e.getID() == MouseEvent.MOUSE_RELEASED)
+	                    bot.bulletPower = 0;
+	            }
+        }
+        
+        modifies fire(){
+            if (bot.bulletPower > 0 && bot.getGunHeat() == 0) {
+                Bullet b = bot.setFireBullet(bot.bulletPower);
+                bot.registerBullet(b);
+            }
+        }	
+	}
+}
