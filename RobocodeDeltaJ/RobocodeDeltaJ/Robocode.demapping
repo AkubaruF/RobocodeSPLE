@@ -12,3 +12,6 @@ Furthest:
 
 Slowest:
 <decore/SlowestEnemySelect.decore>
+
+RandomTargeting:
+<decore/RandomTargeting.decore>

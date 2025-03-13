@@ -1,0 +1,26 @@
+delta RandomTargeting {
+	modifies jab.module.Targeting{
+		
+		adds import java.util.Random;
+		adds import robocode.util.Utils;
+		adds import jab.module.Module;
+		adds import jab.module.Targeting;
+		
+		modifies target(){
+			if (bot.enemy != null) {
+				Random rand = new Random();
+
+				double myX = bot.getX();
+				double myY = bot.getY();
+				double enemyX = bot.enemy.x;
+				double enemyY = bot.enemy.y;
+				
+    			double randRadiusX = ((2 * rand.nextDouble()) - 1) * 500;
+    			double randRadiusY = ((2 * rand.nextDouble()) - 1) * 500;
+
+				double theta = Utils.normalAbsoluteAngle(Math.atan2(enemyX - myX + randRadiusX, enemyY - myY + randRadiusY));
+				bot.setTurnGunRightRadians(Utils.normalRelativeAngle(theta - bot.getGunHeadingRadians()));
+			}
+		}
+	}
+}
