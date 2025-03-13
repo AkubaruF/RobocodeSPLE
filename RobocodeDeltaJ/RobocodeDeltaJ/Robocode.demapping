@@ -9,3 +9,6 @@ MouseRandom:
 
 Furthest:
 <decore/FurthestEnemySelect.decore>
+
+Slowest:
+<decore/SlowestEnemySelect.decore>

@@ -19,8 +19,9 @@
         </groups>
       </features>
       <features minCardinality="1" maxCardinality="1" name="SelectEnemy">
-        <groups maxCardinality="1">
+        <groups minCardinality="1" maxCardinality="1">
           <features maxCardinality="1" name="Furthest"/>
+          <features maxCardinality="1" name="Slowest"/>
         </groups>
       </features>
     </groups>
