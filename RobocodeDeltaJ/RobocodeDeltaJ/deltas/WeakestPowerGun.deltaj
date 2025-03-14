@@ -1,0 +1,21 @@
+delta WeakestPowerGun {
+	
+	modifies jab.module.Gun{
+		adds import robocode.Bullet;
+		adds import robocode.Rules;
+        
+        modifies fire(){
+            if (bot.enemy != null) {
+				double bulletPower = Math.min(Rules.MIN_BULLET_POWER, bot.getEnergy() - 0.01);
+				if (bot.enemy.energy == 0) {
+					bulletPower = 0;
+				}
+				bot.bulletPower = bulletPower;
+				if (bot.getGunHeat() == 0) {
+					Bullet b = bot.setFireBullet(bulletPower);
+					bot.registerBullet(b);
+				}
+			}
+        }	
+	}
+}

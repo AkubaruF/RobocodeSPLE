@@ -14,8 +14,9 @@
         </groups>
       </features>
       <features minCardinality="1" maxCardinality="1" name="Gun">
-        <groups maxCardinality="1">
+        <groups minCardinality="1" maxCardinality="1">
           <features maxCardinality="1" name="MouseRandom"/>
+          <features maxCardinality="1" name="WeakestPowerGun"/>
         </groups>
       </features>
       <features minCardinality="1" maxCardinality="1" name="SelectEnemy">
